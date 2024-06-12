@@ -1,7 +1,9 @@
 import AcmeLogo from '@/app/ui/acme-logo';
 import { ArrowRightIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
+import { lusitana } from '@/app/ui/fonts';
 import styles from '@/app/ui/home.module.css';
+import Image from 'next/image';
 
 export default function Page() {
   return (
@@ -15,7 +17,7 @@ export default function Page() {
             className="h-0 w-0 border-b-[30px] border-l-[20px] border-r-[20px] border-b-black border-l-transparent border-r-transparent"
           /> */}
           <div className={styles.shape} />
-          <p className={`text-xl text-gray-800 md:text-3xl md:leading-normal`}>
+          <p className={`${lusitana.className} text-xl text-gray-800 md:text-3xl md:leading-normal`}>
             <strong>Welcome to Popular Financial Markets.</strong> We help you make smart investments and other financial decisions{' '}
             ,brought to you by <strong>S.B Computer Labs</strong>.
           </p>
@@ -28,6 +30,20 @@ export default function Page() {
         </div>
         <div className="flex items-center justify-center p-6 md:w-3/5 md:px-28 md:py-12">
           {/* Add Hero Images Here */}
+          <Image
+          src='/hero-desktop.jpg'
+          width={1000}
+          height={760}
+          className='hidden md:block'
+          alt='Screenshots of the stock analysis'
+          />
+          <Image
+          src='/hero-mobile.jpg'
+          height={620}
+          width={560}
+          className='block md:hidden'
+          alt='Screenshot of mobile app'
+          />
         </div>
       </div>
     </main>
